@@ -1,0 +1,42 @@
+### Common
+---
+server:
+  port: 8002
+
+spring:
+  application:
+    name: Ticket-Chai-Backend
+  profiles:
+    active: pgsql
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: update
+  liquibase:
+    change-log: "classpath:/db.changelog/db.changelog-master.yml"
+    enabled: true
+
+
+logging:
+  level:
+    root: INFO
+---
+
+---
+
+### PgSQL profile
+
+spring:
+  profiles: pgsql
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/ticket-chai-backend}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:12211221}
+
+#  datasource:
+#    url: ${DB_URL:jdbc:postgresql://ec2-52-208-221-89.eu-west-1.compute.amazonaws.com:5432/de3oqdg8fa2vk9}
+#    #    url: ${DB_URL:jdbc:postgresql://localhost:5432/utpn-test}
+#    username: ${DB_USERNAME:fhbvnwzzrozheo}
+#    password: ${DB_PASSWORD:5728a1416e45e333da7f2859a72d6fa6a24f7909c9c6ce24cff4b7466013cf4d}
+---
+
