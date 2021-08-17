@@ -11,8 +11,6 @@ import javax.validation.constraints.Size;
 
 @Data
 @Builder
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
