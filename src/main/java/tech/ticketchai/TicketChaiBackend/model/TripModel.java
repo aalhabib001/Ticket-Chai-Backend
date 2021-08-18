@@ -15,6 +15,7 @@ import java.util.List;
 @Data
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "TRIP_MODEL")
 public class TripModel extends BaseEntity {
