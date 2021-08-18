@@ -32,4 +32,5 @@ public class TicketSearchController {
         return ticketSearchService.searchTickets(from, to, date);
     }
 
+
 }
