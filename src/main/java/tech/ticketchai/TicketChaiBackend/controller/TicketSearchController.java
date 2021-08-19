@@ -7,7 +7,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import tech.ticketchai.TicketChaiBackend.dto.ApiMsgResponse;
 import tech.ticketchai.TicketChaiBackend.dto.ApiResponse;
+import tech.ticketchai.TicketChaiBackend.dto.request.TicketBookRequest;
+import tech.ticketchai.TicketChaiBackend.dto.response.TicketPurchaseResponse;
+import tech.ticketchai.TicketChaiBackend.model.TicketModel;
 import tech.ticketchai.TicketChaiBackend.model.TripModel;
 import tech.ticketchai.TicketChaiBackend.service.TicketSearchService;
 
@@ -32,5 +36,15 @@ public class TicketSearchController {
         return ticketSearchService.searchTickets(from, to, date);
     }
 
+    @PostMapping("/purchase")
+    public ResponseEntity<ApiMsgResponse> purchaseTicket(@RequestBody TicketBookRequest ticketBookRequest) {
+
+        return ticketSearchService.purchaseTicket(ticketBookRequest);
+    }
+
+    @GetMapping("/purchase")
+    public ResponseEntity<ApiResponse<List<TicketPurchaseResponse>>> getPurchasedTickets(@RequestParam String phoneNo){
+        return ticketSearchService.getPurchasedTickets(phoneNo);
+    }
 
 }

@@ -23,8 +23,8 @@ public class TripService {
                 tripCreateRequest.getOperatorName(), tripCreateRequest.getTripCode(), tripCreateRequest.getTripDate(),
                 tripCreateRequest.getTripStartTime(), tripCreateRequest.getTripEndTime(), tripCreateRequest.getBusType(),
                 tripCreateRequest.getTripStartingPoint(), tripCreateRequest.getTripEndingPoint(),
-                tripCreateRequest.getTicketFare(), tripCreateRequest.getTotalSeat(), tripCreateRequest.getSeatType(),
-                tripCreateRequest.getBoardingPoints(), tripCreateRequest.getEndingPoints());
+                tripCreateRequest.getTicketFare(), tripCreateRequest.getTotalSeat(), tripCreateRequest.getTotalSeat(),
+                tripCreateRequest.getSeatType(), tripCreateRequest.getBoardingPoints(), tripCreateRequest.getEndingPoints());
 
         tripModel.setId(UUID.randomUUID().toString());
 

@@ -40,6 +40,8 @@ public class TripModel extends BaseEntity {
 
     private Integer totalSeat;
 
+    private Integer seatAvailable;
+
     private SeatType seatType;
 
     @CollectionTable
